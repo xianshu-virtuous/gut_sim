@@ -1,0 +1,41 @@
+{
+  "name": "gut_sim",
+  "display_name": "肠胃模拟（Gut Sim）",
+  "version": "0.4.0",
+  "description": "给 bot 装一条会累、会憋、会出事的肠胃：屁意与便意双数值按轮次与 token 推进，三档感受（无感/有感/强烈）驱动提示词注入，憋忍经验提升两条上限，羞耻值决定溢出容差与聊天干扰强度；附带 4 种负面与 3 种正面状态（由便宜模型按聊天语境判断）。与市场版 sisp / deep_neo_sisp 的私密模式联动——私密中按便意档位把「现在是什么感觉」告诉它。默认只做安静的模拟器，猎奇项全部独立开关。 事件卡（与 sisp 同构：泻药/闹肚子/憋气/受凉/吃撑）会真实改变两条数值的增速与上限，失禁描述落在卡指定的场景里。",
+  "author": "Aemeath",
+  "dependencies": {
+    "plugins": [],
+    "components": []
+  },
+  "include": [
+    {
+      "component_type": "event_handler",
+      "component_name": "gut_sim_received",
+      "dependencies": [],
+      "enabled": true
+    },
+    {
+      "component_type": "event_handler",
+      "component_name": "gut_sim_usage",
+      "dependencies": [],
+      "enabled": true
+    },
+    {
+      "component_type": "event_handler",
+      "component_name": "gut_sim_injector",
+      "dependencies": [],
+      "enabled": true
+    },
+    {
+      "component_type": "command",
+      "component_name": "gut",
+      "dependencies": [],
+      "enabled": true
+    }
+  ],
+  "entry_point": "plugin.py",
+  "min_core_version": "1.0.0",
+  "python_dependencies": [],
+  "dependencies_required": false
+}
